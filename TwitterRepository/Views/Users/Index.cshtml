@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Css/Intro.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Css/Button.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div align="center" class="fond" style="background: linear-gradient(#1f253d,#ff3200); width: auto; height: auto">
+
+        <div class="first_circle"></div>
+        <div class="first_div">
+            <div class="second_div">
+                <div class="img_div">
+                    <img src="http://www.endava.com/-/media/EndavaDigital/Endava/Images/MetaDataImages/preview-image.ashx">
+                </div>
+            </div>
+        </div>
+
+        <div class="txt_welcome">WELCOME</div>
+        <div class="txt_user">TO .NET TWITTER</div>
+
+        <input type="button" class="btn" value="Sign Up" onclick='window.location = "@Url.Action("SignUp", "Users")";'>
+        <span class="btnLogin"><input type="button" class="btn" value="Sign In" onclick='window.location = "@Url.Action("SignIn", "Users")";' /></span>
+    </div>
+</body>
