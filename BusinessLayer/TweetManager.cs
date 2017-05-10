@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.Interfaces;
 using DaoHelper;
 using DAO;
 using Models;
@@ -10,7 +11,7 @@ using Models;
 
 namespace BusinessLayer
 {
-    public class TweetManager
+    public class TweetManager : ITweetManager
     {
        private TweetDao tweetDao { get; set; }
 

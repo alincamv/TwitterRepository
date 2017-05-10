@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvertData.cs" />
+    <Compile Include="Interfaces\IConvertData.cs" />
+    <Compile Include="Interfaces\IPasswordEncryption.cs" />
     <Compile Include="PasswordEncryption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

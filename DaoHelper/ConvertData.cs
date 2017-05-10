@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using DaoHelper.Interfaces;
 using DAO;
 using Models;
 
 namespace DaoHelper
 {
-    public class ConvertData
+    public class ConvertData:IConvertData
     {
         public User ConvertUserToDao(UserModel model)
         {

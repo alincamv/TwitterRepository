@@ -1,9 +1,10 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using DaoHelper.Interfaces;
 
 namespace DaoHelper
 {
-    public class PasswordEncryption
+    public class PasswordEncryption:IPasswordEncryption
     {
         public string EncryptPassword(string password)
         {

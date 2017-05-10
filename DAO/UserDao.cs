@@ -6,10 +6,11 @@ using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Security.Cryptography;
+using DAO.Interfaces;
 
 namespace DAO
 {
-    public class UserDao
+    public class UserDao:IUserDao
     {
         private TwitterDbEntities dbConnection;
         private User existingUser;

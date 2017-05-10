@@ -1,4 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.IO;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Security;
+using System.Web.UI;
 using BusinessLayer;
 using Models;
 
@@ -14,11 +18,13 @@ namespace TwitterRepository.Controllers
         private UserManager userManager { get; }
 
         // GET: User
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult SignIn()
         {
             return View();
@@ -29,15 +35,17 @@ namespace TwitterRepository.Controllers
         {
             if (userManager.IsExists(user))
             {
-                Session["UserName"] = user.FullName;
-                if (Session["UserID"] != null)
-                {
-                    return View("UserPage");
-                }
-            }
-            return View(user);
-        }
+                //if (FormsAuthentication.Authenticate(user.Email, user.Password))
+                //{
+                //    FormsAuthentication.RedirectFromLoginPage(user.Email,false);
+                //}
 
+                Session["UserEmail"] = user.Email;
+                return View("UserPage", UserPageSetUp(user));
+            }
+            return View("UserPage");
+        }
+        [AllowAnonymous]
         public ActionResult SignUp()
         {
             return View();
@@ -50,13 +58,15 @@ namespace TwitterRepository.Controllers
             {
                 if (userManager.AddUser(user))
                 {
-                    return View("UserPage", user);
+                    Session["UserName"] = user.Username;
+                    return View("UserPage",UserPageSetUp(user));
                 }
             }
             return View(user);
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult UserPage(UserPageModel userPageModel)
         {
             if (userManager.IsExists(userPageModel.UserModel))
@@ -65,5 +75,17 @@ namespace TwitterRepository.Controllers
             }
             return View();
         }
+
+        [Authorize]
+        public UserPageModel UserPageSetUp(UserModel user)
+        {
+            UserPageModel userPageModel = new UserPageModel
+            {
+                UserModel = user,
+                TweetModel = new TweetModel()
+            };
+            return userPageModel;
+        }
+       
     }
 }
