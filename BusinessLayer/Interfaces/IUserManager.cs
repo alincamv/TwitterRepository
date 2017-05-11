@@ -11,5 +11,7 @@ namespace BusinessLayer.Interfaces
     {
         bool IsExists(UserModel user);
         bool AddUser(UserModel user);
+
+        UserModel GetUser(UserModel user);
     }
 }

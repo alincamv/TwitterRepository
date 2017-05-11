@@ -87,7 +87,7 @@ namespace TwitterRepository.Controllers
             return View();
         }
 
-
+        [Authorize]
         public UserPageModel UserPageSetUp(UserModel user)
         {
             Session["UserEmail"] = user.Email;
@@ -99,19 +99,6 @@ namespace TwitterRepository.Controllers
             };
 
             return userPageModel;
-        }
-
-        [Authorize]
-        public UserPageModel UserPageSetUp(UserModel user)
-        {
-            UserPageModel userPageModel = new UserPageModel
-            {
-                UserModel = user,
-                TweetModel = new TweetModel()
-            };
-            return userPageModel;
-        }
-       
-
+        }           
     }
 }
