@@ -1,4 +1,5 @@
-﻿@model Models.UserPageModel
+﻿@using DAO
+@model Models.UserPageModel
 
 @{
     ViewBag.Title = "UserPage";
@@ -20,7 +21,7 @@
                     <a class="header-menu-tab" href="#2"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
                 </li>
                 <li>
-                    <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
+                    <a class="header-menu-tab" href="@Url.Action("TweetPage","Tweets")"><span class="icon fontawesome-envelope scnd-font-color"></span>Add Tweet </a>
                     <a class="header-menu-number" href="#4">5</a>
                 </li>
                 <li>
@@ -49,13 +50,14 @@
                 </div>
 
                 <div class="profile-description">
-                    <h1 class="user-name">@Html.DisplayNameFor(model => model.UserModel.FullName)</h1>
+                    <h1 class="user-name">@Model.UserModel.FullName</h1>
                     <p class="scnd-font-color">This is sample Profile Description</p>
                 </div>
                 <ul class="profile-options horizontal-list">
                     <li><a class="comments" href="#40"><p><span class="icon fontawesome-comment-alt scnd-font-color"></span>23</a></li>                     
                     <li><a class="views" href="#41"><p><span class="icon fontawesome-eye-open scnd-font-color"></span>841</a></li>
-                    <li><a class="likes" href="#42"><p><span class="icon fontawesome-heart-empty scnd-font-color"></span>49</a></li>
+                    <li><a class="likes" href="#42">
+                        <p><span class="icon fontawesome-heart-empty scnd-font-color"></span>49</a></li>
                 </ul>
             </div>
 

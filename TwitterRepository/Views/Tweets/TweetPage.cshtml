@@ -1,0 +1,25 @@
+﻿@using System.Web.UI.WebControls
+@model Models.TweetModel
+
+@{
+    ViewBag.Title = "TweetPage";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Css/Tweet.css" />
+</head>
+
+<body>
+    @using (Html.BeginForm("TweetPage", "Tweets", FormMethod.Post))
+    {
+        <form>
+            <div class="col-lg-10">
+                @Html.TextAreaFor(model => model.Tweet1, new { @class = "feedback-input", placeholder = "Your text here" })
+                @Html.ValidationMessageFor(model => model.Tweet1)
+            <button type="submit">Add</button>
+        </div>
+
+    </form>
+    }
+</body>

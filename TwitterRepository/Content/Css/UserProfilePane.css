@@ -59,7 +59,7 @@
 }
 
 body {
-    background: linear-gradient(#1f253d,#ff4500,orangered);
+	background: #1f253d;
 }
 
 ul {
@@ -92,7 +92,7 @@ h1, h2, p, a, span{
 	color: #fff;
 }
 	.scnd-font-color {
-    color: #9099b7;
+		color: #9099b7;
 	}
 
 .input-container {
@@ -262,7 +262,7 @@ h1, h2, p, a, span{
 					transition: background .3s;
 				}
 					.header-menu-tab:hover {
-						background: orangered;
+						background: #50597b;
 						border-bottom: 4px solid #11a8ab;
 						text-decoration: none;
 					}
@@ -316,7 +316,7 @@ h1, h2, p, a, span{
 	}
 		.block {
 			margin-bottom: 25px;
-			background: #50597b;
+			background: #394264;
 			border-radius: 5px;
 		}
 		/******************************************** LEFT CONTAINER *****************************************/
@@ -391,11 +391,8 @@ h1, h2, p, a, span{
 					  background: #394264;
 					  position: absolute;
 					  text-align: center;
-					  font-size: 28px;
-					  top:0;
-                      left:0;
-                      bottom:0;
-                      right:0;
+						font-size: 28px;
+					  top:0;left:0;bottom:0;right:0;
 					  width: 130px;
 					  height: 130px;
 					  margin: auto;
@@ -787,9 +784,6 @@ h1, h2, p, a, span{
 							}
 							.profile-options .likes {
 								border-top: 4px solid #e64c65;
-							    margin-left: 200px;
-							    margin-top: -67px;
-							    border-left: 1px solid #1f253d;
 							}
 			.weather {
 				height: 555px;

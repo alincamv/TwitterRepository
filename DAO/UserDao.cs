@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Security.Cryptography;
+using Models;
 
 namespace DAO
 {
@@ -60,14 +61,23 @@ namespace DAO
         {
             using (dbConnection= new TwitterDbEntities())
             {
-                existingUser = dbConnection.Users.SingleOrDefault(u => u.Username == user.Username);
-                if (existingUser.Username == user.Username)
+                existingUser = dbConnection.Users.SingleOrDefault(u => u.Email == user.Email);
+                if (existingUser.Email == user.Email)
                 {
                     return true;
                 }
                 
             }
             return false;
+        }
+
+        public User GetUserByEmail(User user)
+        {
+            using (dbConnection= new TwitterDbEntities())
+            {
+                return existingUser = dbConnection.Users.SingleOrDefault(u => u.Email == user.Email);
+                
+            }
         }
     }
 }

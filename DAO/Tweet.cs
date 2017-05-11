@@ -22,7 +22,7 @@ namespace DAO
     
         public int Id { get; set; }
         public int User_Id { get; set; }
-        public byte[] Time_of_tweet { get; set; }
+        public DateTime? Time_of_tweet { get; set; }
         public string Tweet1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

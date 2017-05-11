@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DAO;
 using Models;
 
@@ -57,7 +58,7 @@ namespace DaoHelper
             {
                 Id = tweet.Id,
                 UserId = tweet.User_Id,
-                TimeOfTweet = tweet.Time_of_tweet,
+                TimeOfTweet = (DateTime)tweet.Time_of_tweet,
                 Tweet1 = tweet.Tweet1
             };
         }

@@ -10,7 +10,7 @@ namespace Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public byte[] TimeOfTweet { get; set; }
+        public DateTime TimeOfTweet { get; set; }
         public string Tweet1 { get; set; }
         public virtual ICollection<LikeModel> Likes { get; set; }
         public UserModel User { get; set; }

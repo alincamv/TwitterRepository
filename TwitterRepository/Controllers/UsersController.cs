@@ -29,10 +29,11 @@ namespace TwitterRepository.Controllers
         {
             if (userManager.IsExists(user))
             {
-                Session["UserName"] = user.FullName;
-                if (Session["UserID"] != null)
+                Session["UserEmail"] = user.Email;
+                Session["UserId"] = userManager.GetUser(user).Id;
+                if (Session["UserEmail"] != null)
                 {
-                    return View("UserPage");
+                    return View("UserPage", UserPageSetUp(user));
                 }
             }
             return View(user);
@@ -50,7 +51,7 @@ namespace TwitterRepository.Controllers
             {
                 if (userManager.AddUser(user))
                 {
-                    return View("UserPage", user);
+                    return View("UserPage", UserPageSetUp(user));
                 }
             }
             return View(user);
@@ -61,9 +62,22 @@ namespace TwitterRepository.Controllers
         {
             if (userManager.IsExists(userPageModel.UserModel))
             {
-                return View(userPageModel);
+                return View(UserPageSetUp(userPageModel.UserModel));
             }
             return View();
+        }
+
+        public UserPageModel UserPageSetUp(UserModel user)
+        {
+            Session["UserEmail"] = user.Email;
+            
+            UserPageModel userPageModel = new UserPageModel
+            {
+                UserModel = userManager.GetUser(user),
+                TweetList = new TweetsController().GetAllTweets(user)
+            };
+
+            return userPageModel;
         }
     }
 }

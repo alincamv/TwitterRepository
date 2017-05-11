@@ -38,8 +38,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_Id" Type="int" Nullable="false" />
-          <Property Name="Time_of_tweet" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="Tweet" Type="varchar" MaxLength="50" />
+          <Property Name="Time_of_tweet" Type="datetime" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -54,6 +54,7 @@
           <Property Name="Date_of_registration" Type="date" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="Avatar" Type="varchar" MaxLength="150" />
         </EntityType>
         <Association Name="FK_Likes">
           <End Role="Tweets" Type="Self.Tweets" Multiplicity="1" />
@@ -132,7 +133,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Id" Type="Int32" Nullable="false" />
-          <Property Name="Time_of_tweet" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Time_of_tweet" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Nullable="true" />
           <Property Name="Tweet1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Likes" Relationship="Self.FK_Likes" FromRole="Tweets" ToRole="Likes" />
           <NavigationProperty Name="User" Relationship="Self.FK_Tweets" FromRole="Tweets" ToRole="Users" />
@@ -151,6 +152,7 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Tweets" Relationship="Self.FK_Tweets" FromRole="Users" ToRole="Tweets" />
+          <Property Name="Avatar" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Likes">
           <End Role="Tweets" Type="Self.Tweet" Multiplicity="1" />
@@ -240,6 +242,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="TwitterDBModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Full_name" ColumnName="Full_name" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

@@ -131,6 +131,7 @@
     <Content Include="Content\Css\Intro.css" />
     <Content Include="Content\Css\SignIn.css" />
     <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Css\Tweet.css" />
     <Content Include="Content\Css\UserProfilePane.css" />
     <Content Include="Content\Images\empty_avatar.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -176,6 +177,7 @@
     <Content Include="Views\Users\SignIn.cshtml" />
     <Content Include="Views\Tweets\Index.cshtml" />
     <Content Include="Views\Users\UserPage.cshtml" />
+    <Content Include="Views\Tweets\TweetPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
