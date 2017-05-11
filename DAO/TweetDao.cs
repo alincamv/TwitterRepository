@@ -8,7 +8,7 @@ using Models;
 
 namespace DAO
 {
-    public class TweetDao:ITweetDao
+    public class TweetDao : ITweetDao
     {
         private TwitterDbEntities dbConnection;
         public bool AddTweet(Tweet newTweet)
@@ -25,10 +25,10 @@ namespace DAO
         {
             using (dbConnection = new TwitterDbEntities())
             {
-               return dbConnection.Tweets.Where(t => t.User_Id == userId).ToList();
+                return dbConnection.Tweets.Where(t => t.User_Id == userId).ToList();
             }
 
         }
 
-        }
+    }
 }

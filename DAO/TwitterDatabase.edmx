@@ -133,7 +133,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Id" Type="Int32" Nullable="false" />
-          <Property Name="Time_of_tweet" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Nullable="true" />
+          <Property Name="Time_of_tweet" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Nullable="true" Precision="3" />
           <Property Name="Tweet1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Likes" Relationship="Self.FK_Likes" FromRole="Tweets" ToRole="Likes" />
           <NavigationProperty Name="User" Relationship="Self.FK_Tweets" FromRole="Tweets" ToRole="Users" />
