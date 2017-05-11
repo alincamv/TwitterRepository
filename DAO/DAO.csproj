@@ -54,6 +54,8 @@
     <Compile Include="Follow.cs">
       <DependentUpon>TwitterDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ITweetDao.cs" />
+    <Compile Include="Interfaces\IUserDao.cs" />
     <Compile Include="Like.cs">
       <DependentUpon>TwitterDatabase.tt</DependentUpon>
     </Compile>

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAO.Interfaces;
 using Models;
 
 namespace DAO
 {
-    public class TweetDao
+    public class TweetDao:ITweetDao
     {
         private TwitterDbEntities dbConnection;
         public bool AddTweet(Tweet newTweet)

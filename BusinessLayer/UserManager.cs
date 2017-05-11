@@ -1,10 +1,12 @@
-﻿using DaoHelper;
+﻿using BusinessLayer.Interfaces;
+using DaoHelper;
 using DAO;
+using DAO.Interfaces;
 using Models;
 
 namespace BusinessLayer
 {
-    public class UserManager
+    public class UserManager: IUserManager
     {
         public UserManager()
         {
@@ -14,7 +16,7 @@ namespace BusinessLayer
             userModel = new UserModel();
         }
 
-        private UserDao userDao { get; }
+        private IUserDao userDao { get; }
         private ConvertData convertData { get; }
         private PasswordEncryption passwordEncryption { get; }
         private UserModel userModel { get; set; }
